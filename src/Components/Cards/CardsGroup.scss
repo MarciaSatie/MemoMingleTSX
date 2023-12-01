@@ -1,0 +1,44 @@
+@import "./../../mainScss/variables.scss";
+@import "./../../mainScss/mixins.scss";
+
+.cardGroup {
+  border: $grey3;
+  border-style: solid;
+  border-radius: 2%;
+  margin-top: 5%;
+  text-align: left;
+
+  .cardTitle {
+    display: flex;
+    align-items: center;
+    margin-left: $margin_left;
+    color: $titleColor;
+    h2 {
+      margin-left: 15px;
+    }
+  }
+}
+
+$cardNumber: 100;
+.contentGroup {
+  margin: 20px;
+  display: grid;
+  grid-gap: 0.5rem;
+  grid-template-columns: repeat($cardNumber, auto);
+  overflow-x: scroll;
+  transition: grid-template-columns 0.5s;
+  color: $textColor;
+  @include mediaSet(phone) {
+    grid-template-columns: repeat($cardNumber, 150px);
+  }
+
+  .content1 {
+    min-width: 200px;
+    margin: 5px;
+    position: relative;
+    transition: transform 0.3s;
+  }
+  .content1:hover {
+    z-index: 1000;
+  }
+}

@@ -1,0 +1,50 @@
+/*
+$breakpoint arguments choices:
+(1 em = 16px)
+-phone - 600px == 37.5 em (600 / 16)
+-tabPort - 900px == 56.25 em  
+-tabLand - 1200px == 75 em
+-bigDesktop - 1800px == 112.5 em
+
+We will use EM values for media queries,as the other values worked with EM will work sbetter (otherwise they will calculate proportionally with the current scrren-size
+*/
+.cardGroup {
+  border: rgb(236, 219, 229);
+  border-style: solid;
+  border-radius: 2%;
+  margin-top: 5%;
+  text-align: left;
+}
+.cardGroup .cardTitle {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  color: rgb(178, 8, 82);
+}
+.cardGroup .cardTitle h2 {
+  margin-left: 15px;
+}
+
+.contentGroup {
+  margin: 20px;
+  display: grid;
+  grid-gap: 0.5rem;
+  grid-template-columns: repeat(100, auto);
+  overflow-x: scroll;
+  transition: grid-template-columns 0.5s;
+  color: rgb(35, 33, 33);
+}
+@media (max-width: 37.5em) {
+  .contentGroup {
+    grid-template-columns: repeat(100, 150px);
+  }
+}
+.contentGroup .content1 {
+  min-width: 200px;
+  margin: 5px;
+  position: relative;
+  transition: transform 0.3s;
+}
+.contentGroup .content1:hover {
+  z-index: 1000;
+}/*# sourceMappingURL=CardsGroup.css.map */

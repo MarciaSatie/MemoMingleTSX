@@ -1,0 +1,26 @@
+/*
+$breakpoint arguments choices:
+(1 em = 16px)
+-phone - 600px == 37.5 em (600 / 16)
+-tabPort - 900px == 56.25 em  
+-tabLand - 1200px == 75 em
+-bigDesktop - 1800px == 112.5 em
+
+We will use EM values for media queries,as the other values worked with EM will work sbetter (otherwise they will calculate proportionally with the current scrren-size
+*/
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+body {
+  background-color: #ffffff;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+}/*# sourceMappingURL=index.css.map */

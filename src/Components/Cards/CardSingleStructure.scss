@@ -1,0 +1,39 @@
+@import "./../../mainScss/variables.scss";
+@import "./../../mainScss/mixins.scss";
+
+.contentCard {
+  box-shadow: 0 2px 8px $cardShadow;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 12px;
+  background-color: $cCard_BG;
+  overflow: auto;
+  max-height: 350px;
+  text-align: left;
+}
+.contentCard:hover {
+  background-color: $cCard_BG_hover;
+  transform: scale(105%);
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 5px 5px $cardShadow_hover;
+  margin-left: 5px;
+}
+
+.contentTitle {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: $titleColor;
+
+  h2 {
+    margin-left: 2%;
+  }
+}
+
+@include mediaSet(phone) {
+  /* CSS rules for screens with a maximum width of 768px */
+  .contentCard {
+    width: 150px;
+    height: 250px;
+  }
+}

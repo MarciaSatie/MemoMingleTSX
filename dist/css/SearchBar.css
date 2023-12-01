@@ -1,0 +1,38 @@
+/*
+$breakpoint arguments choices:
+(1 em = 16px)
+-phone - 600px == 37.5 em (600 / 16)
+-tabPort - 900px == 56.25 em  
+-tabLand - 1200px == 75 em
+-bigDesktop - 1800px == 112.5 em
+
+We will use EM values for media queries,as the other values worked with EM will work sbetter (otherwise they will calculate proportionally with the current scrren-size
+*/
+.input-wrapper {
+  background-color: rgb(236, 219, 229);
+  margin: 5px;
+  width: 70%;
+  border-radius: 10px;
+  height: 2.5rem;
+  padding: 0 15px;
+  box-shadow: 0px, 0px, 8px #ddd;
+  display: flex;
+  align-items: center;
+}
+
+input {
+  background-color: transparent;
+  border: none;
+  height: 100%;
+  font-size: 1.25rem;
+  width: 100%;
+  margin-left: 5px;
+}
+
+input:focus {
+  outline: none;
+}
+
+#search-icon {
+  color: rgb(178, 8, 82);
+}/*# sourceMappingURL=SearchBar.css.map */

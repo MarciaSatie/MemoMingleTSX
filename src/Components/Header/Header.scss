@@ -1,0 +1,18 @@
+@import "./../../mainScss/variables.scss";
+@import "./../../mainScss/mixins.scss";
+
+.headerT {
+  display: flex;
+  padding: 0 3%;
+  align-items: center;
+  background-color: $headerT_BG;
+  height: 7em;
+
+  .hTitle {
+    margin-left: 3%;
+    color: $titleColor;
+  }
+}
+.logo {
+  width: 80%;
+}

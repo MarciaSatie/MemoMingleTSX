@@ -1,0 +1,44 @@
+@import "./../../mainScss/variables.scss";
+@import "./../../mainScss/mixins.scss";
+
+.button-52 {
+  font-size: 16px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 10px 15px 10px;
+  outline: 0;
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0);
+
+  touch-action: manipulation;
+  margin-left: $margin_left;
+  margin-top: 15px;
+  z-index: 0;
+}
+
+.button-52:after {
+  content: "";
+  background-color: #ff609a9f;
+  border-radius: 5px;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.button-52:hover:after {
+  top: 0px;
+  left: 0px;
+}
+
+@media (min-width: 768px) {
+  .button-52 {
+    padding: 10px 15px 10px;
+  }
+}

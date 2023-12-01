@@ -1,0 +1,34 @@
+//Media Query Manager
+/*
+$breakpoint arguments choices:
+(1 em = 16px)
+-phone - 600px == 37.5 em (600 / 16)
+-tabPort - 900px == 56.25 em  
+-tabLand - 1200px == 75 em
+-bigDesktop - 1800px == 112.5 em
+
+We will use EM values for media queries,as the other values worked with EM will work sbetter (otherwise they will calculate proportionally with the current scrren-size
+*/
+
+@mixin mediaSet($breakpoint) {
+  @if $breakpoint ==phone {
+    @media (max-width: 37.5em) {
+      @content; // @content is used to replace a block of new content that will pass inside of the mixins
+    }
+  }
+  @if $breakpoint ==tabPort {
+    @media (max-width: 56.25em) {
+      @content; // @content is used to replace a block of new content that will pass inside of the mixins
+    }
+  }
+  @if $breakpoint ==tabLand {
+    @media (max-width: 75em) {
+      @content; // @content is used to replace a block of new content that will pass inside of the mixins
+    }
+  }
+  @if $breakpoint ==bigDesktop {
+    @media (max-width: 112.5em) {
+      @content; // @content is used to replace a block of new content that will pass inside of the mixins
+    }
+  }
+}

@@ -1,0 +1,25 @@
+/*
+$breakpoint arguments choices:
+(1 em = 16px)
+-phone - 600px == 37.5 em (600 / 16)
+-tabPort - 900px == 56.25 em  
+-tabLand - 1200px == 75 em
+-bigDesktop - 1800px == 112.5 em
+
+We will use EM values for media queries,as the other values worked with EM will work sbetter (otherwise they will calculate proportionally with the current scrren-size
+*/
+.headerT {
+  display: flex;
+  padding: 0 3%;
+  align-items: center;
+  background-color: rgb(0, 0, 0);
+  height: 7em;
+}
+.headerT .hTitle {
+  margin-left: 3%;
+  color: rgb(178, 8, 82);
+}
+
+.logo {
+  width: 80%;
+}/*# sourceMappingURL=Header.css.map */

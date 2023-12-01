@@ -1,0 +1,20 @@
+//Scss mixins, variables
+@import "./mainScss/variables.scss";
+@import "./mainScss/mixins.scss";
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+body {
+  background-color: $body_BG;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+}

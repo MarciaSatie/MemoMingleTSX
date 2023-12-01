@@ -1,0 +1,46 @@
+/*
+$breakpoint arguments choices:
+(1 em = 16px)
+-phone - 600px == 37.5 em (600 / 16)
+-tabPort - 900px == 56.25 em  
+-tabLand - 1200px == 75 em
+-bigDesktop - 1800px == 112.5 em
+
+We will use EM values for media queries,as the other values worked with EM will work sbetter (otherwise they will calculate proportionally with the current scrren-size
+*/
+.contentCard {
+  box-shadow: 0 2px 8px rgb(155, 134, 152);
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 12px;
+  background-color: rgb(255, 255, 255);
+  overflow: auto;
+  max-height: 350px;
+  text-align: left;
+}
+
+.contentCard:hover {
+  background-color: rgb(254, 251, 253);
+  transform: scale(105%);
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 5px 5px rgb(215, 157, 206);
+  margin-left: 5px;
+}
+
+.contentTitle {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: rgb(178, 8, 82);
+}
+.contentTitle h2 {
+  margin-left: 2%;
+}
+
+@media (max-width: 37.5em) {
+  /* CSS rules for screens with a maximum width of 768px */
+  .contentCard {
+    width: 150px;
+    height: 250px;
+  }
+}/*# sourceMappingURL=CardSingleStructure.css.map */
