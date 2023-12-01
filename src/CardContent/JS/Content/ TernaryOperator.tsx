@@ -1,6 +1,7 @@
 import "./../../cardContent.scss";
 import CodeMirror from "@uiw/react-codemirror";
 import { javascript } from "@codemirror/lang-javascript";
+import { CompletionContext } from "@codemirror/autocomplete";
 import { useState } from "react";
 
 const r1Title = "Ternary Operators";
