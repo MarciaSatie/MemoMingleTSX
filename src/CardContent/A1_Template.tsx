@@ -1,5 +1,8 @@
 //Parent Content.jsx
 import "./../../../cardContent.scss";
+import CodeMirror from "@uiw/react-codemirror";
+import { javascript } from "@codemirror/lang-javascript";
+
 //import img1 from "./xxx_assets/img1.png";
 //<img src={img1}></img>
 
@@ -9,14 +12,20 @@ import "./../../../cardContent.scss";
 
 //export xxx
 const r1Title = "xxx"; //Replace Title
-const r1Date = createDate("2023-11-25"); //Replace 2023-09-25 for the current date
+const r1Date = createDate("2023-12-25"); //Replace 2023-09-25 for the current date
 const r1Text = TextContent(); // Change the information inside of TextContent Function
 
 function TextContent() {
   return (
     <>
       {/* Add the New Content Bellow */}
-
+      <CodeMirror
+        value={`code here;`}
+        height="50%"
+        theme="dark"
+        extensions={[javascript({ jsx: true })]}
+        // onChange={onChange}
+      />
       {/* Detail template */}
       <div className="codeStyle">
         <pre>

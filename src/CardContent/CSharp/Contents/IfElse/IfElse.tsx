@@ -3,7 +3,6 @@ import "./../../../cardContent.scss";
 
 import CodeMirror from "@uiw/react-codemirror";
 import { javascript } from "@codemirror/lang-javascript";
-import { CompletionContext } from "@codemirror/autocomplete";
 
 //import img1 from "./IfElse_assets/img1.png";
 //<img src={img1}></img>

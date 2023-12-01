@@ -7,12 +7,20 @@ import ConsoleInteractions from "./Contents/Consoleinteractions/ConsoleInteracti
 import StringInterpolation from "./Contents/StringInterpolation/StringInterpolation.tsx";
 import Variables from "./Contents/Variables/Variables.tsx";
 import IfElse from "./Contents/IfElse/IfElse.tsx";
+import SwitchCase from "./Contents/SwitchCase/SwitchCase.tsx";
 
 const content: any = [];
 
 export default content;
 
-content.push(Tips, ConsoleInteractions, StringInterpolation, Variables, IfElse);
+content.push(
+  Tips,
+  ConsoleInteractions,
+  StringInterpolation,
+  Variables,
+  IfElse,
+  SwitchCase
+);
 
 content.forEach((item: any) => {
   item.logo = logo;
