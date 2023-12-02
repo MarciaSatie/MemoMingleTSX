@@ -8,6 +8,8 @@ import StringInterpolation from "./Contents/StringInterpolation/StringInterpolat
 import Variables from "./Contents/Variables/Variables.tsx";
 import IfElse from "./Contents/IfElse/IfElse.tsx";
 import SwitchCase from "./Contents/SwitchCase/SwitchCase.tsx";
+import ForLoops from "./Contents/ForLoops/ForLoops.tsx";
+import ClassInteraction from "./Contents/ClassInteraction/ClassInteraction.tsx";
 
 const content: any = [];
 
@@ -19,7 +21,9 @@ content.push(
   StringInterpolation,
   Variables,
   IfElse,
-  SwitchCase
+  SwitchCase,
+  ForLoops,
+  ClassInteraction
 );
 
 content.forEach((item: any) => {
