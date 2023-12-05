@@ -1,5 +1,7 @@
 //Parent Content.jsx
 import "./../../../cardContent.scss";
+import CodeMirror from "@uiw/react-codemirror";
+import { javascript } from "@codemirror/lang-javascript";
 import img1 from "./Arrays_assets/img1.png";
 //<img src={img1}></img>
 
@@ -135,6 +137,57 @@ function TextContent() {
             <span className="comment">// ["banana","cherry","kiwi"]</span>
           </code>
         </pre>
+      </details>
+
+      <details>
+        <summary>
+          {" "}
+          <strong className="attention">.map()</strong>
+        </summary>
+        <p>
+          The map() method loops through the original array and calls the Arrow
+          function on every element of the array. Since it is a non-mutating
+          method, it creates a new array and the original array is not altered.
+          In simple words, it is used when you want to transform all values
+          within an array
+        </p>
+        <CodeMirror
+          value={`const array1 = [1, 4, 9, 16];
+
+// Pass a function to map
+const map1 = array1.map((x) => x * 2);
+
+console.log(map1);
+// Expected output: Array [2, 8, 18, 32])`}
+          //number
+          height="50%"
+          theme="dark"
+          extensions={[javascript({ jsx: true })]}
+          // onChange={onChange}
+        />
+      </details>
+
+      <details>
+        <summary>
+          {" "}
+          <strong className="attention">.forEach()</strong>
+        </summary>
+        <p>
+          This is very similar to the map() method, it also executes the
+          function on each element once, except that it mutates the original
+          array in place, it does not create a new array.
+        </p>
+        <CodeMirror
+          value={`const array1 = ['Anne', 'John', 'Carl'];
+
+          array1.forEach((x) => console.log(x + " Smith"));
+          // Expected output: Anne Smith John Smith Carl Smith`}
+          //number
+          height="50%"
+          theme="dark"
+          extensions={[javascript({ jsx: true })]}
+          // onChange={onChange}
+        />
       </details>
 
       <details>

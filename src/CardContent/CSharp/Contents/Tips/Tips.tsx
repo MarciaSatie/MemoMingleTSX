@@ -64,6 +64,17 @@ function TextContent() {
         </p>
         <img src={img2}></img>
       </details>
+      <details>
+        <summary>
+          <strong>Ascii-code</strong>
+        </summary>
+        <a href="https://www.ascii-code.com/">Go to Ascii Website</a>
+        <p>
+          ASCII, stands for American Standard Code for Information Interchange.
+          It is a 7-bit character code where each individual bit represents a
+          unique character
+        </p>
+      </details>
     </>
   );
 }

@@ -11,7 +11,7 @@ import img1 from "./ClassInteraction_assets/img1.png";
 // Command+F replace ClassInteraction for the name of the file (the name will be used at Content.jsx)
 
 //export ClassInteraction
-const r1Title = "Classes Interaction from other file"; //Replace Title
+const r1Title = "Classes Interaction from other file, usign Methods."; //Replace Title
 const r1Date = createDate("2023-12-02"); //Replace 2023-09-25 for the current date
 const r1Text = TextContent(); // Change the information inside of TextContent Function
 

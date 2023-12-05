@@ -6,7 +6,7 @@ import "./../../../cardContent.scss";
 // Command+F replace Npm for the name of the file (the name will be used at Content.jsx)
 
 //export Npm
-const r1Title = "NPM usefull commands"; //Replace Title
+const r1Title = "NPM useful commands"; //Replace Title
 const r1Date = createDate("2023-11-15"); //Replace 2023-09-25 for the current date
 const r1Text = TextContent(); // Change the information inside of TextContent Function
 
