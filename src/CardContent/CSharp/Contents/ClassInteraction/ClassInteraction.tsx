@@ -11,20 +11,21 @@ import img1 from "./ClassInteraction_assets/img1.png";
 // Command+F replace ClassInteraction for the name of the file (the name will be used at Content.jsx)
 
 //export ClassInteraction
-const r1Title = "Classes Interaction from other file, usign Methods."; //Replace Title
+const r1Title = "Classes Interaction from other file."; //Replace Title
 const r1Date = createDate("2023-12-02"); //Replace 2023-09-25 for the current date
 const r1Text = TextContent(); // Change the information inside of TextContent Function
 
 function TextContent() {
   return (
     <>
-      {/* Add the New Content Bellow */}
-      <p>
-        At File.cs 01, let's create a class that will be imported at another
-        file.
-      </p>
-      <CodeMirror
-        value={`
+      <details>
+        <summary>Through Methods</summary>
+        <p>
+          At File.cs 01, let's create a class that will be imported at another
+          file.
+        </p>
+        <CodeMirror
+          value={`
 class Student {
 
 
@@ -40,18 +41,18 @@ class Student {
       return name;
   }
 }`}
-        height="50%"
-        theme="dark"
-        extensions={[javascript({ jsx: true })]}
-        // onChange={onChange}
-      />
-      <br></br>
-      <p>
-        At FileTest.cs 02, contain Main(), and will import the class from
-        file.cs 01
-      </p>
-      <CodeMirror
-        value={`using System;
+          height="50%"
+          theme="dark"
+          extensions={[javascript({ jsx: true })]}
+          // onChange={onChange}
+        />
+        <br></br>
+        <p>
+          At FileTest.cs 02, contain Main(), and will import the class from
+          file.cs 01
+        </p>
+        <CodeMirror
+          value={`using System;
 
 public class StudentTest
 {
@@ -71,22 +72,24 @@ public class StudentTest
 }
         
         `}
-        height="50%"
-        theme="dark"
-        extensions={[javascript({ jsx: true })]}
-        // onChange={onChange}
-      />{" "}
-      <div className="codeStyle">
-        <pre>
-          <code>{`Output:
+          height="50%"
+          theme="dark"
+          extensions={[javascript({ jsx: true })]}
+          // onChange={onChange}
+        />{" "}
+        <div className="codeStyle">
+          <pre>
+            <code>{`Output:
 Type student name: Jonh // user input
 New Student name is Jonh `}</code>
-        </pre>
-      </div>
-      <details>
-        <summary>Coding Explanation</summary>
-        <img src={img1}></img>
+          </pre>
+        </div>
+        <details>
+          <summary>Coding Explanation</summary>
+          <img src={img1}></img>
+        </details>
       </details>
+
       <br></br>
       <details>
         <summary>{`{ get; set; } property`}</summary>
