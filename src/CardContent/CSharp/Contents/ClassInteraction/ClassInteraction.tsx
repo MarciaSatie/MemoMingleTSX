@@ -4,6 +4,7 @@ import CodeMirror from "@uiw/react-codemirror";
 import { javascript } from "@codemirror/lang-javascript";
 
 import img1 from "./ClassInteraction_assets/img1.png";
+import img3 from "./ClassInteraction_assets/img3.png";
 //<img src={img1}></img>
 
 //Remember to add the  ClassInteraction to content array at Content.jsx
@@ -11,7 +12,7 @@ import img1 from "./ClassInteraction_assets/img1.png";
 // Command+F replace ClassInteraction for the name of the file (the name will be used at Content.jsx)
 
 //export ClassInteraction
-const r1Title = "Classes Interaction from other file."; //Replace Title
+const r1Title = "Classes Interaction from different file."; //Replace Title
 const r1Date = createDate("2023-12-02"); //Replace 2023-09-25 for the current date
 const r1Text = TextContent(); // Change the information inside of TextContent Function
 
@@ -66,7 +67,7 @@ public class StudentTest
     Student newStudent = new Student();
         newStudent.SetName(theName);
 
-    Console.WriteLine($"New Student name is{newStudent.GetName()}");
+    Console.WriteLine($"New Student name is {newStudent.GetName()}");
     
   }
 }
@@ -90,9 +91,66 @@ New Student name is Jonh `}</code>
         </details>
       </details>
 
-      <br></br>
       <details>
-        <summary>{`{ get; set; } property`}</summary>
+        <summary>Through Properties</summary>
+
+        <p>Class Account that will be called at AccountTest.cs file</p>
+        <CodeMirror
+          value={`class Account
+{
+    private string name; // instance variable
+
+    // property to get and set the name instance variable               
+    public string Name
+    {
+      get // returns the corresponding instance variable's value
+      {
+          return name; // returns the value of name to the client code
+      }
+      set // assigns a new value to the corresponding instance variable
+      {
+          name = value; // value is implicitly declared and initialized
+      }
+    }
+}
+        ;`}
+          height="50%"
+          theme="dark"
+          extensions={[javascript({ jsx: true })]}
+          // onChange={onChange}
+        />
+        <p>Calling Class Account Properties (.Name)</p>
+        <CodeMirror
+          value={`class AccountTest
+{
+    static void Main()
+    {
+      // create an Account object and assign it to myAccount
+      Account myAccount = new Account();
+
+      // display myAccount's initial name 
+      Console.WriteLine($"Initial name is: {myAccount.Name}");
+
+      // prompt for and read the name, then put the name in the object
+      Console.Write("Please enter the name: "); // prompt
+      string theName = Console.ReadLine(); // read a line of text
+      myAccount.Name = theName; // put theName in myAccount's Name
+
+      // display the name stored in object myAccount
+      Console.WriteLine($"myAccount's name is: {myAccount.Name}");
+    }
+}
+          
+          `}
+          height="50%"
+          theme="dark"
+          extensions={[javascript({ jsx: true })]}
+          // onChange={onChange}
+        />
+      </details>
+
+      <details>
+        <summary>{`{ get; set; } Auto Property`}</summary>
         <p>
           This is the auto-implemented property syntax. It automatically
           generates a private backing field and the getter (get) and setter
@@ -145,6 +203,9 @@ string carMake = myCar.Make; // Get the value
           // onChange={onChange}
         />
       </details>
+      <br></br>
+      <p>Follow an example of 3 Class Interaction:</p>
+      <img src={img3}></img>
     </>
   );
 }
