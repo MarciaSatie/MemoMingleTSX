@@ -12,6 +12,7 @@ import ForLoops from "./Contents/ForLoops/ForLoops.tsx";
 import ClassInteraction from "./Contents/ClassInteraction/ClassInteraction.tsx";
 import Arrays from "./Contents/Arrays/Arrays.tsx";
 import UsefulMethods from "./Contents/UsefulMethods/UsefulMethods.tsx";
+import Snippets from "./Contents/Snnipets/Snippets.tsx";
 
 const content: any = [];
 
@@ -19,6 +20,7 @@ export default content;
 
 content.push(
   Tips,
+  Snippets,
   UsefulMethods,
   ConsoleInteractions,
   StringInterpolation,
