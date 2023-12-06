@@ -7,12 +7,20 @@ import NPM from "./Content/NPM/NPM.tsx";
 import Terminal from "./Content/Terminal/Terminal.tsx";
 import Tips_WriteMemos from "./Content/Tips_WriteMemos/Tips_WriteMemos.tsx";
 import VSCode_Snippets from "./Content/VSCode_Snippets/VSCode_Snippets.tsx";
+import UseEffect from "./Content/UseEffect/UseEffect.tsx";
 
 const content = [];
 
 export default content;
 
-content.push(CreateNewProject, Tips_WriteMemos, NPM, Terminal, VSCode_Snippets);
+content.push(
+  CreateNewProject,
+  Tips_WriteMemos,
+  NPM,
+  Terminal,
+  VSCode_Snippets,
+  UseEffect
+);
 
 content.forEach((item) => {
   item.logo = logo;
