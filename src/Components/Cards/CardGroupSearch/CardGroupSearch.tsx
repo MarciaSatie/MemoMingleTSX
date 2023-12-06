@@ -12,6 +12,15 @@ export default function CardGroupSearch(props) {
   let [countCards, setCountCards] = useState(0);
   let ifSetCountCards = countCards < 6 ? true : false;
 
+  useEffect(() => {
+    // Update countCards after the initial render
+    setCountCards(
+      content.filter((item) =>
+        item.title.toLowerCase().includes(search.toLowerCase())
+      ).length
+    );
+  }, [content, search]); // Depend on content and search to re-run the effect when they change
+
   return (
     <>
       <div className="cardGroup">
@@ -32,8 +41,6 @@ export default function CardGroupSearch(props) {
             let strToLower = str.toLowerCase().includes(search.toLowerCase());
 
             if (strToLower) {
-              setCountCards = countCards++;
-
               return (
                 <div className="content1">
                   <CardSingleStructure
@@ -46,7 +53,7 @@ export default function CardGroupSearch(props) {
                 </div>
               );
             } else {
-              // console.log("item not founded.");
+              return null;
             }
           })}
 
