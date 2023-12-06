@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import "./../../../mainScss/variables.scss";
 import "./../../../mainScss/mixins.scss";
 import CardSingleStructure from "./../CardSingleStructure.tsx";
@@ -9,20 +9,31 @@ export default function CardGroupSearch(props) {
   const [results, setResults] = useState("none");
   let search = results;
 
+  let [countCards, setCountCards] = useState(0);
+  let ifSetCountCards = countCards < 6 ? true : false;
+
   return (
     <>
       <div className="cardGroup">
         <SearchBar setResults={setResults} />
-        {/* *** Notes Content *** */}
-        <div className="contentGroup">
+
+        <div
+          className="contentGroup"
+          style={{
+            color: "#002D62",
+            gridTemplateColumns: ifSetCountCards
+              ? "repeat(5, auto)"
+              : "repeat(100, auto)",
+          }}
+        >
           {/* *** Loop through List of Notes *** */}
           {content.map((item, index) => {
             let str = item.title;
             let strToLower = str.toLowerCase().includes(search.toLowerCase());
-            console.log(strToLower);
 
             if (strToLower) {
-              console.log("match founded.");
+              setCountCards = countCards++;
+
               return (
                 <div className="content1">
                   <CardSingleStructure
@@ -35,7 +46,7 @@ export default function CardGroupSearch(props) {
                 </div>
               );
             } else {
-              console.log("item not founded.");
+              // console.log("item not founded.");
             }
           })}
 
