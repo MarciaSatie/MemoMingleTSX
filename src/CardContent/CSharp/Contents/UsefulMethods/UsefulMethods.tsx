@@ -19,7 +19,7 @@ function TextContent() {
   return (
     <>
       <details>
-        <summary>GetType()</summary>
+        <summary>var.GetType()</summary>
         <CodeMirror
           value={`int age = 38;
 Console.WriteLine(age.GetType());
@@ -59,20 +59,21 @@ Console.WriteLine(result.GetType());
         />
       </details>
       <br></br>
-      <details></details>
-      <CodeMirror
-        value={`code here;`}
-        height="50%"
-        theme="dark"
-        extensions={[javascript({ jsx: true })]}
-        // onChange={onChange}
-      />
-      {/* Detail template */}
-      <div className="codeStyle">
-        <pre>
-          <code>console.log('string $&#123; variable &#125; ')</code>
-        </pre>
-      </div>
+      <details>
+        <summary>var.ToString()</summary>
+        <p> It converts an object to its string representation</p>
+        <CodeMirror
+          value={`int initialValue = 123 // number;
+var result = initialValue.ToString();
+Console.WriteLine(result.GetType());
+//System.String`}
+          height="50%"
+          theme="dark"
+          extensions={[javascript({ jsx: true })]}
+          // onChange={onChange}
+        />
+      </details>
+      <br></br>
     </>
   );
 }
