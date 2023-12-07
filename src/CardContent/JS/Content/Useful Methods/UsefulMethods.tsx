@@ -45,6 +45,84 @@ typeof x           // Returns "undefined" (if x has no value)`}
           // onChange={onChange}
         />
       </details>
+      <br></br>
+      <details>
+        <summary>var.toString(radix);</summary>
+        <details>
+          <summary>radix:</summary>
+          <ul>
+            <li>Optional.</li>
+            <li>Must be an integer between 2 and 36.</li>
+            <li>
+              <details>
+                <summary>Base 2 is binary.</summary>
+                <CodeMirror
+                  value={`let num = 15;
+let text = num.toString(2);
+console.log(text); //1111
+`}
+                  //number
+                  height="50%"
+                  theme="dark"
+                  extensions={[javascript({ jsx: true })]}
+                  // onChange={onChange}
+                />
+              </details>
+            </li>
+            <li>
+              <details>
+                <summary>Base 8 is octal.</summary>
+                <CodeMirror
+                  value={`let num = 15;
+let text = num.toString(8);
+console.log(text); //17
+`}
+                  //number
+                  height="50%"
+                  theme="dark"
+                  extensions={[javascript({ jsx: true })]}
+                  // onChange={onChange}
+                />
+              </details>
+            </li>
+            <li>
+              <details>
+                <summary>Base 16 is hexadecimal.</summary>
+                <CodeMirror
+                  value={`let num = 15;
+let text = num.toString(16);
+console.log(text); //f
+`}
+                  //number
+                  height="50%"
+                  theme="dark"
+                  extensions={[javascript({ jsx: true })]}
+                  // onChange={onChange}
+                />
+              </details>
+            </li>
+          </ul>
+        </details>
+        <CodeMirror
+          value={`let num = 15;
+let text = num.toString();
+console.log(text); // String
+`}
+          //number
+          height="50%"
+          theme="dark"
+          extensions={[javascript({ jsx: true })]}
+          // onChange={onChange}
+        />
+        <CodeMirror
+          value={`number.toString(radix)`}
+          //number
+          height="50%"
+          theme="dark"
+          extensions={[javascript({ jsx: true })]}
+          // onChange={onChange}
+        />
+      </details>
     </>
   );
 }

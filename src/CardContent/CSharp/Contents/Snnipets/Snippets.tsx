@@ -24,6 +24,16 @@ function TextContent() {
       </details>
 
       <details>
+        <summary>Class</summary>
+        <p>prop (pres Tab 2X)</p>
+      </details>
+
+      <details>
+        <summary>Contructor</summary>
+        <p>ctor (pres Tab 2X)</p>
+      </details>
+
+      <details>
         <summary>How to create your own Snippets</summary>
         <ol>
           <li>
