@@ -11,7 +11,7 @@ import img1 from "./Constructor_assets/img1.png";
 // Command+F replace Constructor for the name of the file (the name will be used at Content.jsx)
 
 //export Constructor
-const r1Title = "Constructor"; //Replace Title
+const r1Title = "Class's Constructor"; //Replace Title
 const r1Date = createDate("2023-12-08"); //Replace 2023-09-25 for the current date
 const r1Text = TextContent(); // Change the information inside of TextContent Function
 
