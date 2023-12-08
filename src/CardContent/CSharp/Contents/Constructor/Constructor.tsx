@@ -140,38 +140,6 @@ Person p1 = new Person();//new will call the constructor`}
         extensions={[javascript({ jsx: true })]}
         // onChange={onChange}
       />
-
-      {/* Detail template */}
-      <div className="codeStyle">
-        <pre>
-          <code>console.log('string $&#123; variable &#125; ')</code>
-        </pre>
-      </div>
-
-      <details>
-        <summary>Exemple</summary>
-      </details>
-      <details>
-        <summary>Explanation</summary>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid
-          ipsum ullam odit inventore necessitatibus accusantium quis maxime
-          dicta et harum consequuntur incidunt magni fugiat dignissimos, quam ea
-          praesentium molestias enim?
-        </p>
-      </details>
-      <details>
-        <summary>Exemple</summary>
-        <div className="codeStyle">
-          <code>bla bla bla</code>
-        </div>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid
-          ipsum ullam odit inventore necessitatibus accusantium quis maxime
-          dicta et harum consequuntur incidunt magni fugiat dignissimos, quam ea
-          praesentium molestias enim?
-        </p>
-      </details>
     </>
   );
 }
