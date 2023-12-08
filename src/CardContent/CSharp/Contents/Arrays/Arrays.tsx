@@ -360,6 +360,29 @@ Console.WriteLine(names.IndexOf("Marie"));//2  `}
           // onChange={onChange}
         />
       </details>
+
+      <details>
+        <summary>list.GetRange(1stIndex, 2ndIndex)</summary>
+        <ul>
+          <li>Return a range between 2 indexs</li>
+          <li>
+            Accept 2 arguments, the 1st index, 2nd index, and will return the
+            range between the 2 arguments
+          </li>
+        </ul>
+        <CodeMirror
+          value={`var names = new List<string> { "Doung", "Aline", "Marie", "Carl", "Brian", "Rick", "Sally", "Tom", "Alan" };
+
+foreach (var name in names.GetRange(2, 3))
+{
+    Console.WriteLine(name);
+}// Marie Carl Brian`}
+          height="50%"
+          theme="dark"
+          extensions={[javascript({ jsx: true })]}
+          // onChange={onChange}
+        />
+      </details>
     </>
   );
 }

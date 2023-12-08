@@ -76,19 +76,32 @@ Outer: 2
         <summary>foreach (type variableName in arrayName){}</summary>
         <p>Just to loop Arrays</p>
         <CodeMirror
-          value={`string[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+          value={`string[] cars = { "Volvo", "BMW", "Ford", "Mazda", "Toyota", "Ferrari" };
 
-foreach (string i in cars) 
+foreach (string i in cars[2..4]) // you can also range an Array, this jsut works in Arrays, for lists use .GetRange(index1, index2)
 {
-  Console.WriteLine(i);
-} ;
-//Volvo, BMW, Ford, Mazda`}
+    Console.WriteLine(i); //Ford Mazda
+}`}
           height="50%"
           theme="dark"
           extensions={[javascript({ jsx: true })]}
           // onChange={onChange}
         />
       </details>
+      <p>You can also range the array:</p>
+      <CodeMirror
+        value={`string[] cars = {"Volvo", "BMW", "Ford", "Mazda","Toyota","Ferrari"};
+
+foreach (string i in cars[2..4]) 
+{
+  Console.WriteLine(i);
+} ;
+// Ford, Mazda`}
+        height="50%"
+        theme="dark"
+        extensions={[javascript({ jsx: true })]}
+        // onChange={onChange}
+      />
       <br></br>
 
       <details>

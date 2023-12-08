@@ -83,6 +83,13 @@ function TextContent() {
         </summary>
         <p>add tabs spaces</p>
       </details>
+
+      <details>
+        <summary>
+          <span className="attention">{`\u20AC`}</span>
+        </summary>
+        <p>use the unicode: \u20AC</p>
+      </details>
     </>
   );
 }
