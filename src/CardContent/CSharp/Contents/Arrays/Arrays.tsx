@@ -254,30 +254,44 @@ foreach (var item in myList)
         <ul>
           <li>Sorts the elements in the entire list.</li>
           <br></br>
-          {/* <li><details>
-            <summary>if the List is <strong>IComparable</strong></summary>
-            <ul>
-              <li>Sort <strong>()</strong> method is available for lists that contain
-            elements that implement the <strong>IComparable</strong> interface.
-            <br></br>
-            <br></br>
-            If the elements in your list are of a basic data type (e.g., int,
-            string, etc.), or they are custom types that implement the
-            IComparable interface, you can use the Sort() method without
-            providing any additional arguments.
-          </li>
-            </ul>
-          </details>
-            
+
           <li>
             <details>
-            <summary>If List don't implement<strong> IComparable</strong>
-            </summary>
-          </details>
-          <p></p>
-            If your list contains custom objects, and those objects don't implement <strong>IComparable</strong>, or you want to customize the sorting behavior, you can use an overload of the <strong>Sort()</strong> method that takes a <strong>Comparison</strong> delegate. This delegate allows you to specify a custom comparison logic.
-          </li> */}
+              <summary>
+                if the List is <strong>IComparable</strong>
+              </summary>
+              <ul>
+                <li>
+                  Sort <strong>()</strong> method is available for lists that
+                  contain elements that implement the{" "}
+                  <strong>IComparable</strong> interface.
+                  <br></br>
+                  <br></br>
+                  If the elements in your list are of a basic data type (e.g.,
+                  int, string, etc.), or they are custom types that implement
+                  the IComparable interface, you can use the Sort() method
+                  without providing any additional arguments.
+                </li>
+              </ul>
+            </details>
+          </li>
+
+          <li>
+            <details>
+              <summary>
+                If List don't implement<strong> IComparable</strong>
+              </summary>
+              <p></p>
+              If your list contains custom objects, and those objects don't
+              implement <strong>IComparable</strong>, or you want to customize
+              the sorting behavior, you can use an overload of the{" "}
+              <strong>Sort()</strong> method that takes a{" "}
+              <strong>Comparison</strong> delegate. This delegate allows you to
+              specify a custom comparison logic.
+            </details>
+          </li>
         </ul>
+
         <CodeMirror
           value={`var names = new List<string> {"Doung","Aline","Marie","Carl","Brian"};
           names.Sort();
