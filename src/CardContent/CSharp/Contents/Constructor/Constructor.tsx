@@ -19,10 +19,11 @@ function TextContent() {
   return (
     <>
       <p>
-        A Constructor is a special method that is called when an object of a
-        class is created. It is used to initialize the object's state and
-        perform any necessary setup tasks. Constructors have the same name as
-        the class and do not have a return type, not even <strong>void.</strong>{" "}
+        A <strong>Constructor</strong> is a special method that is called when
+        an object of a class is created.{" "}
+        <strong>It is used to initialize</strong> the object's state and perform
+        any necessary setup tasks. Constructors have the same name as the class
+        and do not have a return type, not even <strong>void.</strong>{" "}
         <img src={img1}></img>
         <br></br>
         <br></br>
