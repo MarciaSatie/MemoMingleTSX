@@ -293,14 +293,30 @@ foreach (var item in myList)
         </ul>
 
         <CodeMirror
-          value={`var names = new List<string> {"Doung","Aline","Marie","Carl","Brian"};
-          names.Sort();
-
-foreach (string name in names)
+          value={`public class Person
 {
-    Console.WriteLine(name);
+    public string Name { get; set; }
+    public int Age { get; set; }
+}
 
-}// Aline Brian Carl Doung Marie`}
+List<Person> people = new List<Person>
+{
+    new Person { Name = "Alice", Age = 30 },
+    new Person { Name = "Bob", Age = 25 },
+    new Person { Name = "Charlie", Age = 35 }
+};
+
+people.Sort((p1, p2) => p1.Age.CompareTo(p2.Age));
+
+foreach (Person person in people)
+{
+    Console.WriteLine($"{person.Name}, {person.Age} years old");
+}
+// Output:
+// Bob, 25 years old
+// Alice, 30 years old
+// Charlie, 35 years old
+`}
           height="50%"
           theme="dark"
           extensions={[javascript({ jsx: true })]}
