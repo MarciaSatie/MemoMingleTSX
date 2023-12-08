@@ -13,6 +13,7 @@ import ClassInteraction from "./Contents/ClassInteraction/ClassInteraction.tsx";
 import Arrays from "./Contents/Arrays/Arrays.tsx";
 import UsefulMethods from "./Contents/UsefulMethods/UsefulMethods.tsx";
 import Snippets from "./Contents/Snnipets/Snippets.tsx";
+import Constructor from "./Contents/Constructor/Constructor.tsx";
 
 const content: any = [];
 
@@ -29,7 +30,8 @@ content.push(
   SwitchCase,
   ForLoops,
   Arrays,
-  ClassInteraction
+  ClassInteraction,
+  Constructor
 );
 
 content.forEach((item: any) => {
