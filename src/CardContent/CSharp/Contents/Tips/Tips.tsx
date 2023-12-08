@@ -75,6 +75,13 @@ function TextContent() {
           unique character
         </p>
       </details>
+
+      <details>
+        <summary>
+          <span className="attention">\t</span>
+        </summary>
+        <p>add tabs spaces</p>
+      </details>
     </>
   );
 }

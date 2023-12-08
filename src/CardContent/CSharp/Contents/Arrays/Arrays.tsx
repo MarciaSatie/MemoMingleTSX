@@ -121,12 +121,25 @@ foreach (string i in names)
         </ul>
       </details>
 
-      <h3>Common Methods</h3>
+      {/* //////////List Methods//////////// */}
+      <h3>List Methods</h3>
+      <details>
+        <summary>list[index]</summary>
+        <CodeMirror
+          value={`var names = new List<string> {"Aline","Carl","Brian"};
+
+Console.WriteLine(names[0]);//Return first position Aline
+Console.WriteLine(names[^1]);//Return last position; Brian
+Console.WriteLine(names[^2]);//Return 2nd last position Carl`}
+          height="50%"
+          theme="dark"
+          extensions={[javascript({ jsx: true })]}
+          // onChange={onChange}
+        />
+      </details>
 
       <details>
-        <summary>
-          <strong className="attention">{`foreach(var item in array){code}`}</strong>
-        </summary>
+        <summary>{`foreach(var item in array){code}`}</summary>
         <p>Loop throgh and Array / List </p>
         <CodeMirror
           value={`int[] array = { 1, 2, 3 };
@@ -148,32 +161,156 @@ foreach (var item in list)
           extensions={[javascript({ jsx: true })]}
           // onChange={onChange}
         />
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid
-          ipsum ullam odit inventore necessitatibus accusantium quis maxime
-          dicta et harum consequuntur incidunt magni fugiat dignissimos, quam ea
-          praesentium molestias enim?
-        </p>
       </details>
 
       <details>
-        <summary>Exemple</summary>
-        <div className="codeStyle">
-          <code>bla bla bla</code>
-        </div>
+        <summary>list.Add(toBeAdded)</summary>
+
+        <ul>
+          <li>Add new elements to the list</li>
+          <li>expects a single argument </li>
+        </ul>
         <CodeMirror
-          value={`code here;`}
+          value={`var myList = new List<int>();
+myList.Add(2); 
+myList.Add(15);
+myList.Add(36);
+
+foreach(int item in myList) 
+{
+   Console.WriteLine(item);
+} // 2 15 36
+}`}
           height="50%"
           theme="dark"
           extensions={[javascript({ jsx: true })]}
           // onChange={onChange}
         />
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid
-          ipsum ullam odit inventore necessitatibus accusantium quis maxime
-          dicta et harum consequuntur incidunt magni fugiat dignissimos, quam ea
-          praesentium molestias enim?
-        </p>
+      </details>
+
+      <details>
+        <summary>list.Insert(index,toBeAdded)</summary>
+
+        <ul>
+          <li>Add new elements to the list at specified index</li>
+          <li>
+            expects 2 argument, first - index, second the element to be added{" "}
+          </li>
+        </ul>
+        <CodeMirror
+          value={`var names = new List<string> {"Aline","Carl","Brian"};
+names.Insert(2, "Doug");//Aline Carl Doug Brian}`}
+          height="50%"
+          theme="dark"
+          extensions={[javascript({ jsx: true })]}
+          // onChange={onChange}
+        />
+      </details>
+
+      <details>
+        <summary>list.Remove(toBeRemoved)</summary>
+        <ul>
+          <li>Remove the element inside of (), from the list</li>
+          <li>expects a single argument </li>
+        </ul>
+        <CodeMirror
+          value={`var  myList = new List<string> { "Alice", "Bob", "William" };
+myList.Remove("Bob");
+
+foreach (var item in myList)
+{
+    Console.WriteLine(item);//Alice William   
+}`}
+          height="50%"
+          theme="dark"
+          extensions={[javascript({ jsx: true })]}
+          // onChange={onChange}
+        />
+      </details>
+
+      <details>
+        <summary>list.RemoveAt(index)</summary>
+        <ul>
+          <li>Removes the item at the specified index</li>
+          <li>expects a single argument </li>
+        </ul>
+        <CodeMirror
+          value={`var  myList = new List<string> { "Alice", "Bob", "William" };
+myList.RemoveAt(0);
+
+foreach (var item in myList)
+{
+    Console.WriteLine(item);//Bob William   
+}`}
+          height="50%"
+          theme="dark"
+          extensions={[javascript({ jsx: true })]}
+          // onChange={onChange}
+        />
+      </details>
+
+      <details>
+        <summary>list.Sort():</summary>
+        <ul>
+          <li>Sorts the elements in the entire list.</li>
+          <br></br>
+          {/* <li><details>
+            <summary>if the List is <strong>IComparable</strong></summary>
+            <ul>
+              <li>Sort <strong>()</strong> method is available for lists that contain
+            elements that implement the <strong>IComparable</strong> interface.
+            <br></br>
+            <br></br>
+            If the elements in your list are of a basic data type (e.g., int,
+            string, etc.), or they are custom types that implement the
+            IComparable interface, you can use the Sort() method without
+            providing any additional arguments.
+          </li>
+            </ul>
+          </details>
+            
+          <li>
+            <details>
+            <summary>If List don't implement<strong> IComparable</strong>
+            </summary>
+          </details>
+          <p></p>
+            If your list contains custom objects, and those objects don't implement <strong>IComparable</strong>, or you want to customize the sorting behavior, you can use an overload of the <strong>Sort()</strong> method that takes a <strong>Comparison</strong> delegate. This delegate allows you to specify a custom comparison logic.
+          </li> */}
+        </ul>
+        <CodeMirror
+          value={`var names = new List<string> {"Doung","Aline","Marie","Carl","Brian"};
+          names.Sort();
+
+foreach (string name in names)
+{
+    Console.WriteLine(name);
+
+}// Aline Brian Carl Doung Marie`}
+          height="50%"
+          theme="dark"
+          extensions={[javascript({ jsx: true })]}
+          // onChange={onChange}
+        />
+      </details>
+
+      <details>
+        <summary>list.Count</summary>
+        <ul>
+          <li>
+            Gets the number of elements contained in the list.(it is like
+            Array.Length)
+          </li>
+          <li>Doesn't expect any argument, so you won't add () after Count</li>
+        </ul>
+        <CodeMirror
+          value={`var names = new List<string> {"Doung","Aline","Marie","Carl","Brian"};
+Console.WriteLine(names.Count);//5 `}
+          height="50%"
+          theme="dark"
+          extensions={[javascript({ jsx: true })]}
+          // onChange={onChange}
+        />
       </details>
     </>
   );
