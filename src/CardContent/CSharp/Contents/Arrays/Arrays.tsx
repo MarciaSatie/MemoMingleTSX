@@ -342,6 +342,24 @@ Console.WriteLine(names.Count);//5 `}
           // onChange={onChange}
         />
       </details>
+
+      <details>
+        <summary>list.IndexOf(argument)</summary>
+        <ul>
+          <li>Returns the index of the first occurrence of a specific item.</li>
+          <li>
+            The argument is the object you want to figure it out the index.
+          </li>
+        </ul>
+        <CodeMirror
+          value={`var names = new List<string> {"Doung","Aline","Marie","Carl","Brian"};
+Console.WriteLine(names.IndexOf("Marie"));//2  `}
+          height="50%"
+          theme="dark"
+          extensions={[javascript({ jsx: true })]}
+          // onChange={onChange}
+        />
+      </details>
     </>
   );
 }

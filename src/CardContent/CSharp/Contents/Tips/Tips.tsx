@@ -45,7 +45,7 @@ function TextContent() {
           first thing to be read at this file.
           <ul>
             <li>
-              <strong>static</strong>means that the Main method is a static
+              <strong>static</strong> means that the Main method is a static
               member of the class. It does not require an instance of the class
               to be invoked.
             </li>
@@ -58,7 +58,8 @@ function TextContent() {
               <strong>Main(add Parameter/ or not)</strong> This is the name of
               the method. The name Main is a convention for the entry point of a
               C# program. The runtime looks for this method when it starts
-              executing the program.
+              executing the program. Basically it is used to iniatialise the
+              program.
             </li>
           </ul>
         </p>
