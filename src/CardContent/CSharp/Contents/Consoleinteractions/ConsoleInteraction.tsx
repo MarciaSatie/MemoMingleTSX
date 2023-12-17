@@ -36,6 +36,11 @@ function TextContent() {
         <p>Will ask for a user input at Terminal (or Powershell)</p>
       </details>
       <img src={img2} alt="image from Visual Studio for Mac"></img>
+
+      <details>
+        <summary>Console.ReadKey()</summary>
+        <p>Console will accept key interaction from Keyboard</p>
+      </details>
     </>
   );
 }

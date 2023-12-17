@@ -11,13 +11,14 @@ import { javascript } from "@codemirror/lang-javascript";
 // Command+F replace Snippets for the name of the file (the name will be used at Content.jsx)
 
 //export Snippets
-const r1Title = "Snippets"; //Replace Title
+const r1Title = "Snippets and Shortcuts"; //Replace Title
 const r1Date = createDate("2023-12-05"); //Replace 2023-09-25 for the current date
 const r1Text = TextContent(); // Change the information inside of TextContent Function
 
 function TextContent() {
   return (
     <>
+      <h3 className="attention">Snippets</h3>
       <details>
         <summary>Console.WriteLine()</summary>
         <p>cw (pres Tab 2X)</p>
@@ -66,6 +67,17 @@ function TextContent() {
             // onChange={onChange}
           />
         </ol>
+      </details>
+
+      {/** ***  End of Snippets ****** */}
+      <h3 className="attention">Shortcuts</h3>
+      <details>
+        <summary>Ctrl+RR</summary>
+        <p>Change all variables with same name at once</p>
+        <p>
+          Select the variable and press Ctrl+RR, once you change the name from
+          selectable variable, will change from other lines of code as well.{" "}
+        </p>
       </details>
     </>
   );
