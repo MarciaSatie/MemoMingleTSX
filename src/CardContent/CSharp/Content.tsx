@@ -14,6 +14,9 @@ import Arrays from "./Contents/Arrays/Arrays.tsx";
 import UsefulMethods from "./Contents/UsefulMethods/UsefulMethods.tsx";
 import Snippets from "./Contents/Snnipets/Snippets.tsx";
 import Constructor from "./Contents/Constructor/Constructor.tsx";
+import ShortCircuiting from "./Contents/ShotCircuiting/ShortCircuiting.tsx";
+
+import Incrementing from "./Contents/Incrementing/Incrementing.tsx";
 
 const content: any = [];
 
@@ -31,7 +34,9 @@ content.push(
   ForLoops,
   Arrays,
   ClassInteraction,
-  Constructor
+  Constructor,
+  Incrementing
+  //ShortCircuiting
 );
 
 content.forEach((item: any) => {
