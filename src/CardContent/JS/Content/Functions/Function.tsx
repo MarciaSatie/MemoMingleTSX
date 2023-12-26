@@ -69,6 +69,19 @@ console.log(divide(8, 2)); // Outputs 4
           <ul>
             <li>Used to create and initialize objects with the new keyword.</li>
             <li>Typically starts with a capital letter.</li>
+            <li>
+              the <strong>this</strong> keyword plays a crucial role in
+              constructor functions. Constructor functions are used to create
+              and initialize objects, particularly when you want to create
+              multiple instances of similar objects. The <strong>this</strong>{" "}
+              keyword refers to the instance of the object that is created by
+              the constructor function. <br></br>
+              <br></br>
+              In summary, the use of <strong>this</strong> in constructor
+              functions is central to the object-oriented nature of JavaScript,
+              enabling the creation of multiple instances with unique property
+              values and facilitating prototype-based inheritance.
+            </li>
           </ul>
         </p>
         <CodeMirror
@@ -79,6 +92,7 @@ console.log(divide(8, 2)); // Outputs 4
 
 var person1 = new Person('John', 25);
 console.log(person1.name); // Outputs John
+console.log(person2.age);   // Outputs 30
 `}
           height="50%"
           theme="dark"
