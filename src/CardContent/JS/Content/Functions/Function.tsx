@@ -107,7 +107,7 @@ console.log(person2.age);   // Outputs 30
         <p>
           <ul>
             <li>
-              unctions passed as arguments to another function, to be executed
+              Functions passed as arguments to another function, to be executed
               later.
             </li>
             <li>Common in asynchronous operations and event handling.</li>

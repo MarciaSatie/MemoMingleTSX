@@ -39,7 +39,7 @@ const Person = function (firstName, birthYear) {
   this.firstName = firstName;
   this.birthYear = birthYear;
 
-  /* Never do this!!!!!! will reate a copy of the method all the time you create a new instace, overloading the program.
+  /* Never do this!!!!!! will create a copy of the method all the time you create a new instace, overloading the program. Instead use Prototype Inheritance.
   this.calcAge = function (){
     console.log(2037 - this.birthYear);
   }
@@ -78,48 +78,235 @@ console.log(Person.prototype.isPrototypeOf(Person)); //false
           // onChange={onChange}
         />
       </details>
-
       <details>
         <summary>ES6 Classes</summary>
         <ul>
           <li>Modern alternative to construct function sytax.</li>
           <li>"Syntactic sugar".</li>
-          <li>Es6 classes do NOT</li>
+          <li>
+            Classes are not hoisted (you can't use them before declare the
+            class).
+          </li>
+          <li>
+            Classes are fist-class citizes you can pass into functions, and also
+            return them from function, as classes are a special type of
+            function).
+          </li>
+          <li>Classes are executed in strict mode.</li>
         </ul>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid
-          ipsum ullam odit inventore necessitatibus accusantium quis maxime
-          dicta et harum consequuntur incidunt magni fugiat dignissimos, quam ea
-          praesentium molestias enim?
+          Classes allow you to encapsulate data and behavior into a single unit,
+          making it easier to organize and manage your code.
         </p>
         <CodeMirror
-          value={``}
-          height="50%"
-          theme="dark"
-          extensions={[javascript({ jsx: true })]}
-          // onChange={onChange}
-        />
-      </details>
+          value={`//2 ways to create a new class:
+//1-Classes Expression
+const PersonC2 = class {};
 
-      <details>
-        <summary>Exemple</summary>
-        <div className="codeStyle">
-          <code>bla bla bla</code>
-        </div>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid
-          ipsum ullam odit inventore necessitatibus accusantium quis maxime
-          dicta et harum consequuntur incidunt magni fugiat dignissimos, quam ea
-          praesentium molestias enim?
-        </p>
-        <CodeMirror
-          value={``}
+//2-Class Declaration
+class PersonC1 {
+  //ADD a constructor Method, works like Constructor Function
+  constructor(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  }
+
+  //creating Methods that will be added to .prototype property
+  calcAge() {
+    console.log(2024 - this.birthYear);
+  }
+}
+
+//Creating Instances:
+const jessica = new PersonC1("Jessica", 1996);
+console.log(jessica); //PersonC1 { firstName: 'Jessica', birthYear: 1996 }
+console.log(jessica.birthYear); //1996
+jessica.calcAge(); //28`}
           height="50%"
           theme="dark"
           extensions={[javascript({ jsx: true })]}
           // onChange={onChange}
         />
+        <details>
+          <summary>Inheritance</summary>
+          <p>
+            Classes support inheritance. In this example below, the{" "}
+            <strong>Child</strong> class extends the <strong>PersonC1</strong>{" "}
+            class using the extends keyword. The super keyword is used to call
+            the constructor of the parent class.
+          </p>
+          <CodeMirror
+            value={`//  Inheritance:
+
+class Child extends PersonC1 {
+  constructor(firstName, birthYear, toy) {
+    super(firstName, birthYear); // Call the parent class constructor
+    this.toy = toy;
+  }
+  favoriteToy() {
+    console.log('"$"{this.firstName} likes to eat "$"{this.toy)'};
+  }
+}
+
+const anne = new Child("Anne", 2019, "Barbie");
+console.log(anne); //Child { firstName: 'Anne', birthYear: 2019, toy: 'Barbie' }
+console.log(anne.favoriteToy()); //Anne likes to eat Barbie
+`}
+            height="50%"
+            theme="dark"
+            extensions={[javascript({ jsx: true })]}
+            // onChange={onChange}
+          />
+        </details>
+        {/* End of Inheritance */}
+        <details>
+          <summary>Getters and Setters </summary>
+          <details>
+            <summary>Getter:</summary>
+            <div>
+              <ul>
+                <li>
+                  <strong>What it does:</strong> A getter is like a special
+                  function in an object that gets called when you try to
+                  retrieve the value of a property.
+                </li>
+                <li>
+                  <strong>Why it's useful:</strong> It allows you to run some
+                  code or calculations before giving back the value of a
+                  property.
+                </li>
+              </ul>
+            </div>
+            <CodeMirror
+              value={`class Circle {
+constructor(radius) {
+  this._radius = radius;
+}
+
+get diameter() {
+  return this._radius * 2;
+}
+}
+
+const myCircle = new Circle(5);
+//calling the method that was created with get (note that you are not using "()")
+console.log(myCircle.diameter); // Outputs: 10
+`}
+              height="50%"
+              theme="dark"
+              extensions={[javascript({ jsx: true })]}
+              // onChange={onChange}
+            />
+          </details>
+          {/* End of Getter */}
+          <details>
+            <summary>Setter:</summary>
+            <ul>
+              <li>
+                <strong>What it does:</strong> A setter is like a special
+                function that gets called when you try to change or set the
+                value of a property.
+              </li>
+              <li>
+                <strong>Why it's useful:</strong> It allows you to run some code
+                or validations before actually setting the new value.
+              </li>
+            </ul>
+            <CodeMirror
+              value={`class Circle {
+  constructor(radius) {
+    this._radius = radius;
+  }
+
+  set diameter(newDiameter) {
+    this._radius = newDiameter / 2;
+  }
+}
+
+const myCircle = new Circle(5);
+console.log(myCircle.diameter); // Outputs: 10
+
+myCircle.diameter = 14;
+console.log(myCircle.diameter); // Outputs: 14
+console.log(myCircle._radius); // Outputs: 7
+`}
+              height="50%"
+              theme="dark"
+              extensions={[javascript({ jsx: true })]}
+              // onChange={onChange}
+            />
+          </details>
+          {/* End of Setter */}
+          <details>
+            <summary>Methods Vs Getters and Setters</summary>
+            <p>
+              The key distinction between methods and getters is in how you
+              access them and their purpose within an object.
+            </p>
+
+            <CodeMirror
+              value={`class Circle {
+constructor(radius) {
+  this._radius = radius;
+}
+
+// Regular method that returns a calculation
+calculateArea() {
+  return Math.PI * this._radius ** 2;
+}
+
+// Getter that also returns a calculation
+get area() {
+  return Math.PI * this._radius ** 2;
+}
+}
+
+const myCircle = new Circle(5);
+
+// Using a regular method
+console.log(myCircle.calculateArea()); // Outputs: 78.53981633974483
+
+// Using a getter
+console.log(myCircle.area); // Outputs: 78.53981633974483
+`}
+              height="50%"
+              theme="dark"
+              extensions={[javascript({ jsx: true })]}
+              // onChange={onChange}
+            />
+            <p>
+              In this example, both the calculateArea method and the area getter
+              perform the same calculation to determine the area of the circle.
+              The primary difference is in how you access them:
+            </p>
+            <ul>
+              <li>
+                You call a method like<strong>calculateArea()</strong> using
+                parentheses.
+              </li>
+              <li>
+                You access a getter like <strong>area</strong> without
+                parentheses, treating it like a property.
+              </li>
+            </ul>
+            <p>
+              Getters are often used when you want to treat a calculation as if
+              it were a property, providing a more natural syntax for reading
+              values. Methods, on the other hand, are used for actions or
+              calculations that you invoke with parentheses.
+            </p>
+            <p>
+              So, while both methods and getters can return calculations, the
+              use of getters is particularly suitable when the computation is
+              conceptually a property of the object, and you want to access it
+              in a property-like way.
+            </p>
+          </details>
+          {/* End of Methods X Getters and Setters */}
+        </details>
+        {/* End of Getter and Setter */}
       </details>
+      {/* End of ES6 Classes */}
 
       <details>
         <summary>Exemple</summary>
