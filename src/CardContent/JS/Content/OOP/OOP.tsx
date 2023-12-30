@@ -21,7 +21,7 @@ function TextContent() {
       {/* Add the New Content Bellow */}
       <img src={img1}></img>
       <details>
-        <summary>Using Constructor Functions</summary>
+        <summary className="attention">Using Constructor Functions</summary>
         <ul>
           <li>Technique to create objects from a function.</li>
           <li>
@@ -79,7 +79,7 @@ console.log(Person.prototype.isPrototypeOf(Person)); //false
         />
       </details>
       <details>
-        <summary>ES6 Classes</summary>
+        <summary className="attention">ES6 Classes</summary>
         <ul>
           <li>Modern alternative to construct function sytax.</li>
           <li>"Syntactic sugar".</li>
@@ -159,6 +159,73 @@ console.log(anne.favoriteToy()); //Anne likes to eat Barbie
           />
         </details>
         {/* End of Inheritance */}
+        <details>
+          <summary>Static Method</summary>
+          <ul>
+            <li>
+              <strong>Associated with the Class Itself:</strong> A static method
+              is associated with the class rather than instances of the class.
+              It is defined using the <strong>static</strong> keyword.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <strong>Accessed on the Class Level: </strong> You call a static
+              method directly on the class, not on instances of the class.
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <strong>No Access to Instance Data:</strong> Static methods don't
+              have access to instance-specific data using <strong>this</strong>.
+              They operate at the class level and can't reference properties or
+              methods that belong to instances.
+            </li>
+          </ul>
+          <CodeMirror
+            value={`//**** Using Static Method *****
+class MathOperations {
+  //A static method is associated with the class rather than instances of the class. It is defined using the static keyword.
+  static add(x, y) {
+    return x + y;
+  }
+}
+const result = MathOperations.add(5, 3); //You call a static method directly on the class, not on instances of the class.
+console.log(result); //8
+
+//***************************************************
+//***** Using normal Method *****
+class MathOperations2 {
+  constructor(x, y) {
+    this.x = x;
+    this.y = y;
+  }
+  add() {
+    return this.x + this.y;
+  }
+}
+//creating a new Object's Instance. 
+const result2 = new MathOperations2(7, 8); // need to create a new instance to pass the parameters.
+console.log(result2.add()); //15
+`}
+            height="50%"
+            theme="dark"
+            extensions={[javascript({ jsx: true })]}
+            // onChange={onChange}
+          />
+          <p>
+            In summary, static methods are associated with the class itself,
+            while regular methods are associated with instances of the class.
+            Static methods are called on the class, and they don't have access
+            to instance data. Regular methods are called on instances, and they
+            have access to the instance's properties and methods through{" "}
+            <strong>this</strong>. The choice between static and regular methods
+            depends on whether the functionality is related to the class as a
+            whole or to specific instances.
+          </p>
+        </details>
+        {/* End of Static Method */}
+
         <details>
           <summary>Getters and Setters </summary>
           <details>
@@ -303,16 +370,178 @@ console.log(myCircle.area); // Outputs: 78.53981633974483
             </p>
           </details>
           {/* End of Methods X Getters and Setters */}
+          <details>
+            <summary>Using Getters and Setter for Data Validation</summary>
+
+            <p>Get and Set can be useful to check input information.</p>
+            <CodeMirror
+              value={`//Using Get and Set for data validation.
+class Person2 {
+  constructor(fullName) {
+    this.fullName = fullName;
+  }
+
+  //when you are trying to set a property name taht already exist you can add underscore  to this._fullName
+  set fullName(name) {
+    if (name.includes(" ")) this._fullName = name;
+    // at this._fulName we ae actually creating anew variable _fullName.
+    else console.log("not a full name");
+  }
+  // the problem of this._fullName is when we call the property exemple jessica2.fullName won't work anymore.
+  //To fix that we need to create a get for fullName.
+  get fullName() {
+    return this._fullName;
+  }
+}
+
+const jessica2 = new Person2("Jessica Jones");
+console.log(jessica2.fullName); // Jessica Jones`}
+              height="50%"
+              theme="dark"
+              extensions={[javascript({ jsx: true })]}
+              // onChange={onChange}
+            />
+          </details>
+          {/* End of Using Getters and Setter for Data Validation */}
         </details>
         {/* End of Getter and Setter */}
       </details>
       {/* End of ES6 Classes */}
 
       <details>
+        <summary className="attention">Object.create</summary>
+        <p>
+          Imagine you want to create an object in JavaScript, and you want that
+          object to share some characteristics with another object.{" "}
+          <strong>Object.create()</strong> helps you do that.
+        </p>
+        <ol>
+          <li>
+            <h4>Creating a Blueprint (Using Object literal):</h4>
+            First, you have a blueprint or a prototype object that defines some
+            properties and behaviors.
+            <CodeMirror
+              value={`// Creating a prototype object using simple Object Literal.
+const PersonProto = {
+  calcAge() {
+    console.log(2024 - this.birthYear);
+  },
+};`}
+              height="50%"
+              theme="dark"
+              extensions={[javascript({ jsx: true })]}
+              // onChange={onChange}
+            />
+          </li>
+          <li>
+            <h4>Creating a New Object:</h4>
+            Now, you want to create a new object, and you want it to inherit
+            properties from the prototype object.
+          </li>
+          <CodeMirror
+            value={`const steven = Object.create(PersonProto);
+console.log(steven); // return an empty object.
+
+steven.name = "Steven";
+steven.birthYear = 2002;
+console.log(steven); //{ name: 'Steven', birthYear: 2002 }
+console.log(steven.calcAge()); // 22`}
+            height="50%"
+            theme="dark"
+            extensions={[javascript({ jsx: true })]}
+            // onChange={onChange}
+          />
+        </ol>
+        <details>
+          <summary>Advantages by using Object.create</summary>
+          <ol>
+            <li>
+              <strong>Prototypal Inheritance:</strong>
+              <ul>
+                <li>
+                  <strong>Flexible Prototypes: Object.create()</strong> allows
+                  you to create objects with flexible and dynamic prototypes.
+                  You can change the prototype at runtime, facilitating
+                  prototypal inheritance patterns.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>Avoids Constructor Functions:</strong>
+              <ul>
+                <li>
+                  <strong>No Constructor Function: </strong> Unlike constructor
+                  functions (used with the <strong>new</strong> keyword),{" "}
+                  <strong>Object.create()</strong> doesn't require a constructor
+                  function. This can make your code more straightforward and
+                  avoid issues related to constructor functions.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>Object Composition:</strong>
+              <ul>
+                <li>
+                  <strong>Object Composition:</strong> You can easily compose
+                  objects by creating a prototype chain. Each object can have
+                  its own properties, and they can inherit and extend the
+                  properties of other objects.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>Explicit Prototype Assignment:</strong>
+              <ul>
+                <li>
+                  <strong>Explicit Prototype Assignment:</strong>The prototype
+                  relationship is explicit. In constructor functions, the
+                  relationship is established through the{" "}
+                  <strong>prototype</strong> property of the constructor
+                  function, which can sometimes be less clear.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>Selective Property Inheritance:</strong>
+              <ul>
+                <li>
+                  <strong>Selective Property Inheritance:</strong> You can
+                  create objects that inherit only specific properties from a
+                  prototype, rather than all properties provided by a
+                  constructor function.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>No Constructor Side Effects:</strong>
+              <ul>
+                <li>
+                  <strong>No Constructor Side Effects:</strong> When using
+                  Object.create(), there's no risk of unintentional side effects
+                  caused by constructor functions. Constructor functions may
+                  have unintended behavior, especially when they're used with
+                  the <strong>new</strong> keyword.
+                </li>
+              </ul>
+            </li>
+            <li>
+              <strong>Dynamic Property Addition:</strong>
+              <ul>
+                <li>
+                  <strong>Dynamic Property Addition:</strong> You can add
+                  properties to objects after creation, either directly to the
+                  object or through the optional{" "}
+                  <strong>propertiesObject </strong>parameter of{" "}
+                  <strong>Object.create()</strong>
+                </li>
+              </ul>
+            </li>
+          </ol>
+        </details>
+      </details>
+      {/* End of Object.create */}
+      <details>
         <summary>Exemple</summary>
-        <div className="codeStyle">
-          <code>bla bla bla</code>
-        </div>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid
           ipsum ullam odit inventore necessitatibus accusantium quis maxime
