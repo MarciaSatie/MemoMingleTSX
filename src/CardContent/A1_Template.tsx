@@ -19,6 +19,16 @@ function TextContent() {
   return (
     <>
       {/* Add the New Content Bellow */}
+      <details>
+        <summary>Exemple</summary>
+        <CodeMirror
+          value={`code here;`}
+          height="50%"
+          theme="dark"
+          extensions={[javascript({ jsx: true })]}
+          // onChange={onChange}
+        />
+      </details>
       <CodeMirror
         value={`code here;`}
         height="50%"

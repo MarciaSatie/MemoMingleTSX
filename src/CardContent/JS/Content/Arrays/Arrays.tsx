@@ -30,6 +30,8 @@ function TextContent() {
             myArray.slice(-1)<span className="comment">// cherry</span>
             <br></br>
             myArray.length<span className="comment">// 3</span>
+            <br></br>
+            myArray.at(-1)<span className="comment">// cherry</span>
           </code>
         </pre>
       </div>

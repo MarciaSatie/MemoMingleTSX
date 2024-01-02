@@ -4,6 +4,7 @@ import CodeMirror from "@uiw/react-codemirror";
 import { javascript } from "@codemirror/lang-javascript";
 import img1 from "./Tips_assets/img1.png";
 import img2 from "./Tips_assets/img2.png";
+import img3 from "./Tips_assets/img3.png";
 //<img src={img1}></img>
 
 //Remember to add the  Tips to content array at Content.jsx
@@ -105,6 +106,13 @@ Console.WriteLine($"{amount2,10:C}"); // ,10 is the space to be added before the
           extensions={[javascript({ jsx: true })]}
           // onChange={onChange}
         />
+      </details>
+      <details>
+        <summary>
+          Ctrl+z (Windows) Ctrl+d (Mac/linux) and press Enter to terminate
+          input:"
+        </summary>
+        <img src={img3}></img>
       </details>
     </>
   );

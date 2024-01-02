@@ -1,5 +1,7 @@
 //Parent Content.jsx
 import "./../../../cardContent.scss";
+import CodeMirror from "@uiw/react-codemirror";
+import { javascript } from "@codemirror/lang-javascript";
 import img1 from "./Variables_assets/img1.png";
 import img2 from "./Variables_assets/img2.png";
 //<img src={img1}></img>
@@ -190,7 +192,17 @@ function TextContent() {
         <div className="codeStyle">
           <code>int myNumber= 7; </code>
         </div>
+
         <ul>
+          <li>
+            <details>
+              <summary>int? nullNumber = null;</summary>
+              <p>
+                If you want to represent an empty state for a value type, you
+                can use a nullable type:
+              </p>
+            </details>
+          </li>
           <li>short</li>
           <li>int</li>
           <li>

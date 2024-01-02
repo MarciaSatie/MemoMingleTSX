@@ -11,7 +11,7 @@ import { javascript } from "@codemirror/lang-javascript";
 // Command+F replace ForLoops for the name of the file (the name will be used at Content.jsx)
 
 //export ForLoops
-const r1Title = "For Loops."; //Replace Title
+const r1Title = "For and While Loops."; //Replace Title
 const r1Date = createDate("2023-12-01"); //Replace 2023-09-25 for the current date
 const r1Text = TextContent(); // Change the information inside of TextContent Function
 
@@ -19,6 +19,7 @@ function TextContent() {
   return (
     <>
       {/* Add the New Content Bellow */}
+      <h2>For Loops</h2>
       <details>
         <summary>for (statement 1; statement 2; statement 3){}</summary>
         <CodeMirror
@@ -193,6 +194,51 @@ namespace MyApplication
         </div>
       </details>
       <br></br>
+
+      <h2>While Loops</h2>
+      <details>
+        <summary>While Loop</summary>
+        <p>
+          {" "}
+          Is used to repeatedly execute a block of code as long as the specified
+          condition evaluates to true.{" "}
+        </p>
+        <CodeMirror
+          value={`int i = 0;
+while (i < 5)
+{
+    Console.WriteLine(i);
+    i++;
+}
+`}
+          height="50%"
+          theme="dark"
+          extensions={[javascript({ jsx: true })]}
+          // onChange={onChange}
+        />
+      </details>
+      <details>
+        <summary>Do While Loop</summary>
+        <p>
+          {" "}
+          Is similar to the while loop, but it guarantees that the block of code
+          will be executed at least once, even if the condition is initially
+          false. The basic syntax is as follows:
+        </p>
+        <CodeMirror
+          value={`int j = 0;
+do
+{
+    Console.WriteLine(j);
+    j++;
+} while (j < 5);
+`}
+          height="50%"
+          theme="dark"
+          extensions={[javascript({ jsx: true })]}
+          // onChange={onChange}
+        />
+      </details>
     </>
   );
 }
