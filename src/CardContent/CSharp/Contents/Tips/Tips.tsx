@@ -1,5 +1,7 @@
 //Parent Content.jsx
 import "./../../../cardContent.scss";
+import CodeMirror from "@uiw/react-codemirror";
+import { javascript } from "@codemirror/lang-javascript";
 import img1 from "./Tips_assets/img1.png";
 import img2 from "./Tips_assets/img2.png";
 //<img src={img1}></img>
@@ -89,6 +91,20 @@ function TextContent() {
           <span className="attention">{`\u20AC`}</span>
         </summary>
         <p>use the unicode: \u20AC</p>
+        <p>Or the code to use the currency sign from your computer.</p>
+
+        <CodeMirror
+          value={`Console.OutputEncoding = System.Text.Encoding.UTF8;// will configure the currency sign from your computer.
+decimal amount = 1200.56m;
+Console.WriteLine($"{amount2,10:C}"); // ,10 is the space to be added before the value.
+// if you won't spaces disregard ,number. exemplo amount:C 
+
+          `}
+          height="50%"
+          theme="dark"
+          extensions={[javascript({ jsx: true })]}
+          // onChange={onChange}
+        />
       </details>
     </>
   );

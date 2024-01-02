@@ -20,6 +20,7 @@ function TextContent() {
     <>
       {/* Add the New Content Bellow */}
       <img src={img1}></img>
+      <h3>3 ways to work with OOP:</h3>
       <details>
         <summary className="attention">Using Constructor Functions</summary>
         <ul>
@@ -77,7 +78,89 @@ console.log(Person.prototype.isPrototypeOf(Person)); //false
           extensions={[javascript({ jsx: true })]}
           // onChange={onChange}
         />
+        <details>
+          <summary>Inheritance</summary>
+          <p>To create Inheritance between Constructors Functions you need:</p>
+          <ol>
+            <li>
+              <strong>Step 1.</strong> Use ParentFunction.call(this, "Parent
+              Arguments"), to call the parent constructor to initialize
+              inherited properties.
+            </li>
+            <br></br>
+            <li>
+              {" "}
+              <strong>Step 2.</strong> Remeber to add "this" as a argument at
+              ParentFunction.call(this, "Parent Arguments"). <br></br>
+              <br></br>
+              The "this" argument passed to Person.call(this, firstName,
+              birthYear); is crucial for properly setting the properties of the
+              object being constructed. Let's break down why this is used in
+              this specific call
+            </li>
+            <br></br>
+            <li>
+              <strong>Step 3.</strong> Establish a prototype chain by setting
+              the prototype of the child constructor to an instance of the
+              parent constructor. This is done using Object.create().
+            </li>{" "}
+            <br></br>
+            <li>
+              <strong>Step 4.</strong> Reset the Child Constructor: Reset the
+              constructor property of the child prototype to point back to the
+              child constructor. This step is necessary because when you set the
+              child's prototype to an instance of the parent, the constructor
+              property gets overridden.
+            </li>
+          </ol>
+          <CodeMirror
+            value={`//Parent Constructor Function
+const Person = function (firstName, birthYear) {
+  this.firstName = firstName;
+  this.birthYear = birthYear;
+};
+
+Person.prototype.calcAge = function () {
+  console.log(2037 - this.birthYear);
+};
+
+//Creating teh Child Constructor Function:
+const Student = function (firstName, birthYear, course) {
+  // Step 1- Using .call() to invoke the Person constructor
+  Person.call(this, firstName, birthYear); //Step 2 -The this context inside the Person constructor refers to the object being created when you use the new keyword. When you use new Person("Jonas", 1991);, a new object is created, and this inside the Person constructor refers to that new object.
+  this.course = course;
+};
+
+//Step 3. Using Object.create to create a link between Parent and Child, it is important to do that before create any other prototype method for  Student, otherwise this will be overrided.
+Student.prototype = Object.create(Person.prototype);
+
+//Step 4. If we don't do this step, Mike will be point to Person prototype ex: Person { firstName: 'Mike', birthYear: 1992, course: 'Arts' }, instead Student and this can became a problem in th efuture.
+Student.prototype.constructor = Student;
+
+Student.prototype.introduce = function () {
+  console.log('My name is "$"{this.firstName} and I study "$"{this.course}');
+};
+
+const mike = new Student("Mike", 1992, "Arts");
+console.log(mike.__proto__); //show the next Prototype in the chain, "Person".
+
+//using instanceof to check if mike is part of each part of the prototype chain.
+console.log(mike instanceof Student); //true
+console.log(mike instanceof Person); //true
+console.log(mike instanceof Object); //true
+
+console.dir(Student.prototype.constructor);
+
+mike.introduce(); //My name is Mike and I study Arts
+`}
+            height="50%"
+            theme="dark"
+            extensions={[javascript({ jsx: true })]}
+            // onChange={onChange}
+          />
+        </details>
       </details>
+      {/* End of Constructor Function */}
       <details>
         <summary className="attention">ES6 Classes</summary>
         <ul>
@@ -129,6 +212,7 @@ jessica.calcAge(); //28`}
         />
         <details>
           <summary>Inheritance</summary>
+
           <p>
             Classes support inheritance. In this example below, the{" "}
             <strong>Child</strong> class extends the <strong>PersonC1</strong>{" "}
@@ -409,7 +493,7 @@ console.log(jessica2.fullName); // Jessica Jones`}
       {/* End of ES6 Classes */}
 
       <details>
-        <summary className="attention">Object.create</summary>
+        <summary className="attention">ES6 Object.create</summary>
         <p>
           Imagine you want to create an object in JavaScript, and you want that
           object to share some characteristics with another object.{" "}
