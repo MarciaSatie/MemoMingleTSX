@@ -21,6 +21,11 @@ function TextContent() {
       {/* Add the New Content Bellow */}
       <details>
         <summary>Exemple</summary>
+        <ul>
+          <li>
+            <strong></strong>
+          </li>
+        </ul>
         <CodeMirror
           value={`code here;`}
           height="50%"
