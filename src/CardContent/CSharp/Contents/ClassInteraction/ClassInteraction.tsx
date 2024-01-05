@@ -525,7 +525,7 @@ string carMake = myCar.Make; // Get the value
         />
       </details>
       <br></br>
-      <p>Follow an example of 3 Class Interaction:</p>
+      <p>Follow an example of the 3 Classes Interaction:</p>
       <img src={img3}></img>
     </>
   );

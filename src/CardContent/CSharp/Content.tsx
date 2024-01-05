@@ -14,7 +14,7 @@ import Arrays from "./Contents/Arrays/Arrays.tsx";
 import UsefulMethods from "./Contents/UsefulMethods/UsefulMethods.tsx";
 import Snippets from "./Contents/Snnipets/Snippets.tsx";
 import Constructor from "./Contents/Constructor/Constructor.tsx";
-import ShortCircuiting from "./Contents/ShotCircuiting/ShortCircuiting.tsx";
+import Operators from "./Contents/Operators/Operators.tsx";
 
 import Incrementing from "./Contents/Incrementing/Incrementing.tsx";
 
@@ -25,6 +25,7 @@ export default content;
 content.push(
   Tips,
   Snippets,
+  Operators,
   UsefulMethods,
   ConsoleInteractions,
   StringInterpolation,
