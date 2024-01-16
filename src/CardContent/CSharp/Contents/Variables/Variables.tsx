@@ -211,6 +211,17 @@ function TextContent() {
           </li>
           <li>long</li>
           <li>double(accept decimal numbers)</li>
+          <li>
+            ulong
+            <CodeMirror
+              value={`Console.WriteLine($"Max ulong {ulong.MaxValue}");//18446744073709551615.
+Console.WriteLine($"Min ulong {ulong.MinValue}");// 0 ; ulong can't be negative.`}
+              height="50%"
+              theme="dark"
+              extensions={[javascript({ jsx: true })]}
+              // onChange={onChange}
+            />
+          </li>
         </ul>
         <img
           src={img1}

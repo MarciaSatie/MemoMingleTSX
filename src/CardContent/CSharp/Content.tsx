@@ -15,6 +15,7 @@ import UsefulMethods from "./Contents/UsefulMethods/UsefulMethods.tsx";
 import Snippets from "./Contents/Snnipets/Snippets.tsx";
 import Constructor from "./Contents/Constructor/Constructor.tsx";
 import Operators from "./Contents/Operators/Operators.tsx";
+import Methods from "./Contents/Methods/Methods.tsx";
 
 import Incrementing from "./Contents/Incrementing/Incrementing.tsx";
 
@@ -32,6 +33,7 @@ content.push(
   Variables,
   IfElse,
   SwitchCase,
+  Methods,
   ForLoops,
   Arrays,
   ClassInteraction,
