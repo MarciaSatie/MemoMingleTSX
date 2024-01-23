@@ -96,6 +96,16 @@ foreach (string i in name)
             <code>{`type [] variableName = new type [slotsNumber];`}</code>
           </pre>
         </div>
+        <p>Creating and fillingan empty array.</p>
+        <CodeMirror
+          value={`int[] myArray [10]; // empty array with 10 slots.
+myArray[0]= 2;//filling slot at index 2;`}
+          height="50%"
+          theme="dark"
+          extensions={[javascript({ jsx: true })]}
+          // onChange={onChange}
+        />
+        <p>Creating an Array with values already.</p>
         <CodeMirror
           value={`string[] names = { "Alice", "Bob", "William" }//specifying the size of the array during initialization
 
@@ -141,6 +151,10 @@ Console.WriteLine(names[^2]);//Return 2nd last position Carl`}
       <details>
         <summary>{`foreach(var item in array){code}`}</summary>
         <p>Loop throgh and Array / List </p>
+        <p>
+          Desavantage: You don't have access to the index, therefore you can't
+          make changes in the array.
+        </p>
         <CodeMirror
           value={`int[] array = { 1, 2, 3 };
 List<int> list = new List<int> { 4, 5, 6 };
