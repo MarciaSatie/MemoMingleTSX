@@ -21,6 +21,9 @@ function TextContent() {
   return (
     <>
       <h2>Class Overview</h2>
+      <p>
+        Classes starts with <strong>UPPERCASE</strong>.
+      </p>
       <details>
         <summary>Class Declaration</summary>
         <ol>
@@ -34,7 +37,9 @@ function TextContent() {
           <li>
             <strong>Fields or Attributes:</strong>These are variables that store
             data related to the class. In the example,
-            <strong>Name, BirthYear</strong> are a private variables field.
+            <strong>Name, BirthYear</strong> are a public variables field. To
+            access them, after creating a new object instance is
+            <strong>newObj.Name</strong> .
           </li>
           <br></br>
           <li>
@@ -69,7 +74,7 @@ public class Person
       //2.Filds
       public string Name; // Can be accessed outside of Class
       public int BirthYear; // Can be accessed outside of Class
-      private int SecurityNumber = 431561;// Can be accessed just inside of Class.
+      private int _securityNumber = 431561;// Can be accessed just inside of Class.
        
 
       // 3.Properties
@@ -140,6 +145,14 @@ class Program
                 for members that need to be accessible from outside the defining
                 class or assembly.
               </li>
+              <li>
+                To access the method, after creating the new Object Instace you
+                ccan call the method this way: <strong>newObj.Method</strong>
+              </li>
+              <li>
+                <strong>Public methods</strong> by convention starts with
+                <strong>Capital Letter</strong> .
+              </li>
             </ul>
           </li>
           <li>
@@ -152,6 +165,11 @@ class Program
               <li>
                 Private members are not visible to other classes or code outside
                 the current class.
+              </li>
+              <li>
+                <strong>Private field Names</strong> should start with
+                underscore followed by lower case letter, example "private
+                _password"
               </li>
             </ul>
 

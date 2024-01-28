@@ -16,7 +16,7 @@ import Snippets from "./Contents/Snnipets/Snippets.tsx";
 import Constructor from "./Contents/Constructor/Constructor.tsx";
 import Operators from "./Contents/Operators/Operators.tsx";
 import Methods from "./Contents/Methods/Methods.tsx";
-
+import DateTime_Class from "./Contents/DateTime_Class/DateTime_Class.tsx";
 import Incrementing from "./Contents/Incrementing/Incrementing.tsx";
 
 const content: any = [];
@@ -38,7 +38,8 @@ content.push(
   Arrays,
   ClassInteraction,
   Constructor,
-  Incrementing
+  Incrementing,
+  DateTime_Class
   //ShortCircuiting
 );
 

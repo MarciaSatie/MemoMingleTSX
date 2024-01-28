@@ -72,7 +72,7 @@ function TextContent() {
       {/** ***  End of Snippets ****** */}
       <h3 className="attention">Shortcuts</h3>
       <details>
-        <summary>Ctrl+RR</summary>
+        <summary>Ctrl+RR (MAC CMD+R R)</summary>
         <p>Change all variables with same name at once</p>
         <p>
           Select the variable and press Ctrl+RR, once you change the name from
