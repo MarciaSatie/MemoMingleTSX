@@ -98,7 +98,7 @@ foreach (string i in name)
         </div>
         <p>Creating and fillingan empty array.</p>
         <CodeMirror
-          value={`int[] myArray [10]; // empty array with 10 slots.
+          value={`int[] myArray= new int [10]; // empty array with 10 slots.
 myArray[0]= 2;//filling slot at index 2;`}
           height="50%"
           theme="dark"
@@ -107,7 +107,9 @@ myArray[0]= 2;//filling slot at index 2;`}
         />
         <p>Creating an Array with values already.</p>
         <CodeMirror
-          value={`string[] names = { "Alice", "Bob", "William" }//specifying the size of the array during initialization
+          value={`var numbers = new[] { 10, -8, 2, 12, -17 };//using var
+//or:
+string[] names = { "Alice", "Bob", "William" }//specifying the size of the array during initialization.
 
 foreach (string i in names)
 {

@@ -12,7 +12,7 @@ import { javascript } from "@codemirror/lang-javascript";
 
 //export xxx
 const r1Title = "xxx"; //Replace Title
-const r1Date = createDate("2023-12-25"); //Replace 2023-09-25 for the current date
+const r1Date = createDate("2024-02-25"); //Replace 2023-09-25 for the current date
 const r1Text = TextContent(); // Change the information inside of TextContent Function
 
 function TextContent() {

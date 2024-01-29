@@ -18,6 +18,7 @@ import Operators from "./Contents/Operators/Operators.tsx";
 import Methods from "./Contents/Methods/Methods.tsx";
 import DateTime_Class from "./Contents/DateTime_Class/DateTime_Class.tsx";
 import Incrementing from "./Contents/Incrementing/Incrementing.tsx";
+import Out from "./Contents/Out/Out.tsx";
 
 const content: any = [];
 
@@ -36,6 +37,7 @@ content.push(
   Methods,
   ForLoops,
   Arrays,
+  Out,
   ClassInteraction,
   Constructor,
   Incrementing,
