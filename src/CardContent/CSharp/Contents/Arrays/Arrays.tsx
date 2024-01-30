@@ -211,6 +211,111 @@ static void ModifyElement(int element) //a copy of the value is passed to the
               </li>
             </details>
           </li>
+          <li>
+            <details>
+              <summary>Multidimentional Arrays</summary>
+              <ul>
+                <li>
+                  <strong>Important: </strong> each line of Array need to have
+                  the exatcly same number os elements. To have lines with
+                  different mumber of elements use the{" "}
+                  <strong> Jagged Array.</strong>
+                </li>
+                <li>
+                  {" "}
+                  <strong>With Jagged Array</strong> you can have Arrays with
+                  different number os elements and different types too.
+                </li>
+                <li>
+                  <strong>.GetLength(0)</strong> return the number of{" "}
+                  <strong>Rows</strong>.
+                </li>
+                <li>
+                  <strong>.GetLength(1)</strong> return the number of{" "}
+                  <strong>Collumns</strong>.
+                </li>
+              </ul>
+              <br></br>
+              <CodeMirror
+                value={`// Initializing rectangular and jagged arrays.
+using System;
+
+class InitArray
+{
+    // create and output rectangular and jagged arrays
+    static void Main()
+    {
+      // with rectangular arrays,
+      // every row must be the same length.
+      int[,] rectangular = {{1, 2, 3}, {4, 5, 6},{7,8,9} };
+
+      // with jagged arrays,
+      // we need to use "new int[]" for every row,
+      // but every row does not need to be the same length.
+      int[][] jagged = {new int[] {1, 2},
+                        new int[] {3},
+                        new int[] {4, 5, 6}};
+
+      OutputArray(rectangular); // displays array rectangular by row
+      Console.WriteLine(); // output a blank line
+      OutputArray(jagged); // displays array jagged by row
+    }
+
+    // output rows and columns of a rectangular array
+    static void OutputArray(int[,] array)
+    {
+      Console.WriteLine("Values in the rectangular array by row are");
+
+      // loop through array's rows                                      
+      for (var row = 0; row < array.GetLength(0); ++row)
+      {
+          // loop through columns of current row                         
+          for (var column = 0; column < array.GetLength(1); ++column)
+          {
+            Console.Write($"{array[row, column]}  ");
+          }
+
+          Console.WriteLine(); // start new line of output               
+      }
+    }
+
+    // output rows and columns of a jagged array
+    static void OutputArray(int[][] array)
+    {
+      Console.WriteLine("Values in the jagged array by row are");
+
+      // loop through each row                           
+      foreach (var row in array)
+      {
+          // loop through each element in current row     
+          foreach (var element in row)
+          {
+            Console.Write($"{element}  ");
+          }
+
+          Console.WriteLine(); // start new line of output
+      }
+    }
+}
+ /* Output is:
+
+1  2  3
+4  5  6
+7  8  9
+
+Values in the jagged array by row are
+1  2
+3
+4  5  6
+ */    
+                `}
+                height="50%"
+                theme="dark"
+                extensions={[javascript({ jsx: true })]}
+                // onChange={onChange}
+              />
+            </details>
+          </li>
         </ul>
       </details>
 

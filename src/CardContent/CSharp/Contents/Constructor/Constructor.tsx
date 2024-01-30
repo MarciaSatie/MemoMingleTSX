@@ -18,6 +18,12 @@ const r1Text = TextContent(); // Change the information inside of TextContent Fu
 function TextContent() {
   return (
     <>
+      <ul>
+        <li>
+          <strong className="attention">ctor (press tab 2X)</strong> snippet to
+          create a <strong>constructor</strong> automatically.
+        </li>
+      </ul>
       <p>
         A <strong>Constructor</strong> is a special method that is called when
         an object of a class is created.{" "}

@@ -3,7 +3,7 @@ import "./../../../cardContent.scss";
 import CodeMirror from "@uiw/react-codemirror";
 import { javascript } from "@codemirror/lang-javascript";
 
-//import img1 from "./Methods_assets/img1.png";
+import img1 from "./Methods_assets/img1.png";
 //<img src={img1}></img>
 
 //Remember to add the  Methods to content array at Content.jsx
@@ -26,6 +26,28 @@ function TextContent() {
 Console.WriteLine($"Cube of 3 = {Cube(3)}" //27);
 Console.WriteLine($"Cube of 100 = {Cube(100)}" //1000000);
 Console.WriteLine($"Cube of 20 = {Cube(20)}");//8000`}
+          height="50%"
+          theme="dark"
+          extensions={[javascript({ jsx: true })]}
+          // onChange={onChange}
+        />
+      </details>
+
+      <ul>
+        <li>
+          <strong className="attention">ctor (press tab 2X)</strong> snippet to
+          create a <strong>constructor</strong> automatically.
+        </li>
+      </ul>
+
+      <details>
+        <summary>Adding Parametrs automatically in a Method.</summary>
+        <img src={img1}></img>
+      </details>
+      <details>
+        <summary>Exemple</summary>
+        <CodeMirror
+          value={`code here;`}
           height="50%"
           theme="dark"
           extensions={[javascript({ jsx: true })]}
