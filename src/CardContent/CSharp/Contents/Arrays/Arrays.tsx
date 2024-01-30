@@ -122,7 +122,6 @@ foreach (string i in names)
           extensions={[javascript({ jsx: true })]}
           // onChange={onChange}
         />
-
         <ul>
           <li>
             Arrays in C# have a fixed size once they are created. You need to
@@ -130,6 +129,88 @@ foreach (string i in names)
             change it afterward.
           </li>
           <li>Arrays provide direct access to elements by index.</li>
+
+          <li>
+            <details>
+              <summary>
+                Passing an Entire Array in a Method vs. Passing a Single Array
+                Element
+              </summary>
+
+              <li>
+                <p>
+                  The parameter from a Method will create a space in the memory,
+                  when you pass an array as a propertie, you are passing a copy
+                  of location (think like a address pointing the same memory
+                  incubation space) from the memory used by original array,
+                  therefore any changes made at this memory locatin will affect
+                  the original array.
+                </p>
+                <CodeMirror
+                  value={`int[] array = {1, 2, 3, 4, 5};
+ModifyArray(array); // pass array reference
+
+foreach (var value in array)
+{
+   Console.Write($"   {value}"); // Output is:  2   4   6   8   10
+}
+
+// multiply each element of an array by 2                     
+static void ModifyArray(int[] array2)// passing the memory location from the
+                                      // array, so any changes will affect the
+                                      // original array.
+{
+    for (var counter = 0; counter < array2.Length; ++counter)
+    {
+      array2[counter] *= 2;
+    }
+}
+
+                  `}
+                  height="50%"
+                  theme="dark"
+                  extensions={[javascript({ jsx: true })]}
+                  // onChange={onChange}
+                />
+              </li>
+              <li>
+                <p>
+                  While in the method that the parameter is an element (example
+                  just a value, type of int). When you pass a value type to a
+                  method, a or array at this case), and changes made to the
+                  parameter within the method do not affect the original value.
+                </p>
+                <CodeMirror
+                  value={`int[] array = {1, 2, 3, 4, 5};
+
+ModifyElement(array[3]); // attempt to modify array[3], that is value of 4;
+
+foreach (var value2 in array)
+{
+    Console.Write($"   {value2}"); // Output is:  2   4   6   8   10
+}
+
+// multiply argument by 2                                 
+static void ModifyElement(int element) //a copy of the value is passed to the
+                                        //method, and changes made to the
+                                        //parameter within the method do not
+                                        //affect the original value.   
+{ 
+      element *= 2;
+    Console.WriteLine($"Value of element in ModifyElement: {element}");
+    //Output is: Value of element in ModifyElement: 16
+}
+
+              
+              `}
+                  height="50%"
+                  theme="dark"
+                  extensions={[javascript({ jsx: true })]}
+                  // onChange={onChange}
+                />
+              </li>
+            </details>
+          </li>
         </ul>
       </details>
 
