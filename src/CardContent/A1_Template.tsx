@@ -62,15 +62,14 @@ function TextContent() {
       </details>
       <details>
         <summary>Exemple</summary>
-        <div className="codeStyle">
-          <code>bla bla bla</code>
-        </div>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid
-          ipsum ullam odit inventore necessitatibus accusantium quis maxime
-          dicta et harum consequuntur incidunt magni fugiat dignissimos, quam ea
-          praesentium molestias enim?
-        </p>
+        <CodeMirror
+          value={`code here;`}
+          height="50%"
+          theme="dark"
+          extensions={[javascript({ jsx: true })]}
+          // onChange={onChange}
+        />
+        ]
       </details>
     </>
   );
