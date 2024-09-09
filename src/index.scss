@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 //Scss mixins, variables
 @import "./mainScss/variables.scss";
 @import "./mainScss/mixins.scss";
